@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href = "main.css">
+    <script type="text/javascript" src= "art.js"</script>
     <title>Celine Kim</title>
   </head>
   <body>
@@ -9,24 +10,39 @@
     <div class =headbar>
          <img src="CelineKim.jpg" alt="Celine Kim">
     </div>
+    <!-- side navigation bar-->
+    <div class="sidenav">
+      <a href="index.html">ABOUT</a>
+      <a href="/art/art.html">ART</a>
+      <a href="/code/code.html">CODE</a>
+      <a href="/contact/contact.html">CONTACT</a>
+    </div>
     <!--top navigation bar-->
     <div class =topbar>
-       <a href="#about">ABOUT</a>
-      <a href="#services">ART</a>
-      <a href="#clients">CODE</a>
-      <a href="#contact">CONTACT</a>
-       <!--empty for about page-->
-    </div>
-    <!--Creating a side navigation bar-->
-    <div class="sidenav">
-      <a href="#about">ABOUT</a>
-      <a href="#services">ART</a>
-      <a href="#clients">CODE</a>
-      <a href="#contact">CONTACT</a>
+       <a href="index.html">ABOUT</a>
+      <a href="/art/art.html">ART</a>
+      <a href="/code/code.html">CODE</a>
+      <a href="/contact/contact.html">CONTACT</a>
     </div>
   </header>
-    <div class="intro">
-      <p>Hello, I am Celine. Welcome to my blog! </p>
-    </div>
+<!-- Images --> 
+    
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <p id="caption"></p>
+  <p id="caption1">Small Dog</p>
+  <p id="caption2">Second Corgi</p>
+</div>
+
+    
+<img id="myImg" class = "gallery" onclick = "putModal('https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12225921/Pembroke-Welsh-Corgi-MP.jpg', 'caption1')" src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12225921/Pembroke-Welsh-Corgi-MP.jpg" alt="Snow">
+    
+<img id="myImg2" class = "gallery" onclick = "putModal('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/WelshCorgi.jpeg/220px-WelshCorgi.jpeg', 'caption2')" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/WelshCorgi.jpeg/220px-WelshCorgi.jpeg" alt = "corgi2">
+    
+<img id="myImg3" class = "gallery" onclick = "putModal('https://www.allkpop.com/upload/2016/11/af_org/IU_1478147965_af_org.jpg', 'caption2')" src= https://www.allkpop.com/upload/2016/11/af_org/IU_1478147965_af_org.jpg alt = "IU.jpeg");
+
+
   </body>
   </html>
