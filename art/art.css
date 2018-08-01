@@ -18,6 +18,7 @@ img:hover {
 }
 #logo
 {
+  margin: auto;
   border: none;
   width: auto;
   height: auto;
