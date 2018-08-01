@@ -21,8 +21,8 @@ img:hover {
   margin-top: auto;
   margin-left: auto;
   border: none;
-  width: auto;
-  height: auto;
+  width: 0px;
+  height: 0px;
 }
 
 body{
