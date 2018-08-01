@@ -1,3 +1,34 @@
+a, p h2{
+    color: #cca8b5;
+    text-decoration: none;
+}
+img{
+  margin-top: 30px;
+  margin-left: 3%;
+  object-fit: cover;
+  border: 10px solid #ffecf3;
+  width:250px;
+  height:250px;
+}
+img:hover {
+  object-fit: cover;
+  width:250px;
+  height:250px;
+  opacity: 0.7;
+}
+#logo
+{
+  border: none;
+  width: auto;
+  height: auto;
+}
+
+body{
+  margin:auto;
+  width: 1200px;
+  background-color: "#ffffff";
+}
+
 .headbar{
   width: 1100px;
   height: 30%;
@@ -8,6 +39,7 @@
   text-align: center;
 }
 
+/* Top bar*/
 .topbar{
   text-align: center;
   margin:auto;
@@ -17,26 +49,19 @@
   height:10px%;
   background-color: #ffecf3;
 }
-#first{
-  margin-left:205px;
-}
+
 .topbar a{
   font-family:calibri;
   text-align: center;
-    margin:auto;
-    margin-left: 5%;
-    text-decoration: none;
-    font-size: 25px;
-    color: #cca8b5;
+  margin:auto;
+  margin-left: 5%;
+  font-size: 25px;
 }
 .topbar a:hover{
   color: #997e88;
 }
-body{
-  margin:auto;
-  width: 1200px;
-  background-color: "#ffffff";
-}
+
+/*side bar*/
 .sidenav {
     margin-top: 4%;
     width: 210px;
@@ -49,33 +74,16 @@ body{
 .sidenav a {
     font-family:calibri;
     padding: 6px 8px 6px 16px;
-    text-decoration: none;
     font-size: 25px;
-    color: #cca8b5;
     display: block;
 }
-
 .sidenav a:hover {
     color: #997e88;
 }
 
-
-#myImg{
+/* left images in the gallery*/
+.left{
   margin-left: 23%;
-}
-.gallery{
-  margin-top: 30px;
-  margin-left: 3%;
-  object-fit: cover;
-  border: 10px solid #ffecf3;
-  width:250px;
-  height:250px;
-}
-.gallery:hover {
-  object-fit: cover;
-  width:250px;
-  height:250px;
-  opacity: 0.7;
 }
 
 /* The Modal */
@@ -99,6 +107,15 @@ body{
     display: block;
     width: 80%;
     max-width: 700px;
+    border:none;
+    height: auto;
+}
+.modal-content:hover{
+  opacity: 1;
+  width: 80%;
+  max-width: 700px;
+  border:none;
+  height: auto;
 }
 /* Caption of Modal Image */
 #caption {
@@ -119,6 +136,54 @@ body{
     animation-name: zoom;
     animation-duration: 0.6s;
 }
+
+/* buttons in the model*/
+#modalButton{
+  float:right;
+}
+/* Arrow*/
+button{
+  background-color: gray;
+  border: none;   
+  padding: 25px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+#rightButton{
+  margin-top: 150px;
+  margin-right: 150px; 
+}
+#rightButton:hover{
+  cursor: pointer;
+}
+#leftButton{
+  margin-top: 150px;
+  margin-left: 150px;
+  float:left;
+}
+
+/* arrow on the buttons*/
+i {
+    opacity: 1.0;
+    margin-top: 5px;
+    border: solid white;
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    padding: 10px;
+}
+.rightArrow {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+.leftArrow {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
 
 @-webkit-keyframes zoom {
     from {-webkit-transform:scale(0)} 
