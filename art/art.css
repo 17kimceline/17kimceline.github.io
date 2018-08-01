@@ -18,7 +18,8 @@ img:hover {
 }
 #logo
 {
-  margin: auto;
+  margin-top: auto;
+  margin-left: auto;
   border: none;
   width: auto;
   height: auto;
