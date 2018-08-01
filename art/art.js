@@ -1,17 +1,45 @@
 //modal will contain the image, modalImg. ModalImg will host the image
 var modal = document.getElementById('myModal');
 var modalImg = document.getElementById("img01");
+var imageNum = 0;
+var maxImage = 5;
 
-// image one 
-var img1 = document.getElementById('myImg');
-
-
-function putModal(imgSrc, caption){
+// function that displays the clicked image in modal
+function putModal(number, imgSrc, caption){
     modal.style.display = "block";
     modalImg.src = imgSrc;
-    document.getElementById('caption').innerHTML =     document.getElementById(caption).textContent;
-  
+    document.getElementById('caption').innerHTML =     document.getElementById(caption).textContent;  
+  imageNum = number;
 }
+
+// function that displays right image in gallery
+function nextRightModal(){
+  imageNum++;
+  if(imageNum> maxImage)
+  {
+    modal.style.display = "none";
+    return; 
+  }
+  var nextImg = document.getElementById(imageNum);
+  modalImg.src = nextImg.src;
+  modal.style.display = "block";
+  document.getElementById('caption').innerHTML =     document.getElementById("caption" + imageNum).textContent; 
+}
+
+// function that displays left image in gallery
+function nextLeftModal(){
+  imageNum--;
+  if(imageNum<1)
+  {
+    modal.style.display = "none";
+    return; 
+  }
+  var nextImg = document.getElementById(imageNum);
+  modalImg.src = nextImg.src;
+  modal.style.display = "block";
+  document.getElementById('caption').innerHTML =     document.getElementById(caption+ imageNum+"").textContent;
+}
+
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
