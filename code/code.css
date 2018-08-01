@@ -1,13 +1,17 @@
 p,a,h2{
     font-family:calibri;
     color: #967a3c;
+    text-decoration: none;
 }
 a:hover{
   color: #facc64;
 }
-img:hover{
-  opacity: 10%;
+img{
+  object-fit: cover;
+  width:160px;
+  height: 130px;
 }
+
 .headbar{
   width: 1100px;
   height: 30%;
@@ -29,10 +33,9 @@ img:hover{
 .topbar a{
   font-family:calibri;
   text-align: center;
-    margin:auto;
-    margin-left: 6%;
-    text-decoration: none;
-    font-size: 25px;
+  margin:auto;
+  margin-left: 6%;
+  font-size: 25px;
 }
 .topbar a:hover{
   color: 	#facc64;
@@ -54,7 +57,6 @@ body{
 .sidenav a {
     font-family:calibri;
     padding: 6px 8px 6px 16px;
-    text-decoration: none;
     font-size: 25px;
     display: block;
 }
@@ -73,20 +75,36 @@ body{
 }
 
 .post{
+  margin-top: 20px;
   width:250px;
   height:280px;
-  margin-left: 280px;
   border: 3px solid #facc64;
   text-align: center;
 }
 .post:hover{
-  opacity: 20%;
+  opacity: 0.6;
+  cursor: pointer;
 }
 .post h2:hover{
-  cursor: pointer;
   color:#facc64;
   opactiy: 20%;
 }
 .post p{
   font-size: 20px;
+}
+
+#left{
+  float: left;
+  margin-left: 280px;
+}
+#middle{
+  float: left;
+  margin-left: 30px;
+}
+#right{
+  margin-left: 850px;
+}
+#right1{
+  margin-top: 45px;
+  margin-left: 850px;
 }
