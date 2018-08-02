@@ -15,12 +15,13 @@ function putModal(number, imgSrc, caption){
 // function that displays right image in gallery
 function nextRightModal(){
   imageNum++;
-  if(imageNum> maxImage)
+  var nextImg = document.getElementById(imageNum);
+  // if null, exit modal display
+  if(!nextImg)
   {
     modal.style.display = "none";
     return; 
   }
-  var nextImg = document.getElementById(imageNum);
   modalImg.src = nextImg.src;
   modal.style.display = "block";
   document.getElementById('caption').innerHTML =     document.getElementById("caption" + imageNum).textContent; 
