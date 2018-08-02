@@ -1,12 +1,23 @@
-a, p h2{
-    color: #cca8b5;
+a, p, h2{
+    color: #997379;
     text-decoration: none;
+}
+a:hover{
+  color: #664c51;
+}
+h1{
+  font-size: 50px;
+  width: 300px;
+  height: 50px;
+  font-family:calibri;
+  text-align: center;
+  margin-left: 40%;
 }
 img{
   margin-top: 30px;
   margin-left: 3%;
   object-fit: cover;
-  border: 10px solid #ffecf3;
+  border: 10px solid #ffd9df;
   width:250px;
   height:250px;
 }
@@ -18,38 +29,36 @@ img:hover {
 }
 #logo
 {
-  margin-top: auto;
-  margin-left: auto;
+  margin: auto;
   border: none;
-  width: 0px;
-  height: 0px;
+  width: auto;
+  height: auto;
 }
 
 body{
   margin:auto;
   width: 1200px;
-  background-color: "#ffffff";
+  background-color: #ffecef;
 }
 
 .headbar{
   width: 1100px;
-  height: 30%;
+  height: 100px;
   color:white;
-  padding: 50px;
   margin: auto;
-  margin-top: 15px;
   text-align: center;
+  margin-top: 65px;
 }
 
 /* Top bar*/
 .topbar{
   text-align: center;
   margin:auto;
-  margin-top: 5px;
+  /*margin-top: 5px;*/
   padding:10px;
   width:1186px;
   height:10px%;
-  background-color: #ffecf3;
+  background-color: #ffd9df;
 }
 
 .topbar a{
@@ -59,28 +68,22 @@ body{
   margin-left: 5%;
   font-size: 25px;
 }
-.topbar a:hover{
-  color: #997e88;
-}
 
 /*side bar*/
 .sidenav {
-    margin-top: 4%;
+    margin-top: 80px;
     width: 210px;
     position: fixed; 
     padding: 8px;
     border-style: solid;
     border-width: 3px;
-    border-color: #ffd3e3;
+    border-color: #ffd9df;
 }
 .sidenav a {
     font-family:calibri;
     padding: 6px 8px 6px 16px;
     font-size: 25px;
     display: block;
-}
-.sidenav a:hover {
-    color: #997e88;
 }
 
 /* left images in the gallery*/
