@@ -1,5 +1,6 @@
 a, p, h2{
-    color: #997379;
+    //color: #997379;
+    color: black;
     text-decoration: none;
 }
 a:hover{
