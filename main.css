@@ -1,23 +1,37 @@
-p,a,h2{
+p,a,h2, li{
     font-family:calibri;
     color: #967a3c;
     font-size: 25px;
+  text-decoration: none;
 }
+
 a:hover{
   color:#c7eec6;
 }
 a:hover{
   color: #facc64;
 }
-
+#flower{
+  width: 20px;
+  height: 20px;
+}
+#daisy1{
+  width: 80px;
+  height: 80px;
+  margin-left: 10px
+}
+#daisy{
+  width: 80px;
+  height: 80px;
+  margin-left: 60px;
+}
 .headbar{
   width: 1100px;
-  height: 30%;
+  height: 100px;
   color:white;
-  padding: 50px;
   margin: auto;
-  margin-top: 15px;
   text-align: center;
+  margin-top: 65px;
 }
 .topbar{
   text-align: center;
@@ -41,7 +55,7 @@ body{
   background-color: #fef4dd;
 }
 .sidenav {
-    margin-top: 4%;
+    margin-top: 80px;
     width: 210px;
     position: fixed; 
     padding: 8px;
@@ -59,11 +73,20 @@ body{
 .intro
 {
   margin-left: 300px;
-  margin-right: 90px;
   margin-top: 50px;
 }
 .intro p{
+  margin-right: 270px;
   font-family:calibri;
   font-size: 25px;
   line-height:50px;
+  text-align: center;
+}
+
+#email{
+  font-weight: bold;
+  font-size: 20px;
+}
+#welcome{
+  font-size: 30px;
 }
