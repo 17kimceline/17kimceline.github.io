@@ -6,20 +6,31 @@ p,a,h2{
 a:hover{
   color: #facc64;
 }
+h1{
+  font-size: 50px;
+  width: 300px;
+  height: 50px;
+  font-family:calibri;
+  text-align: center;
+  margin-left: 40%;
+}
 img{
   object-fit: cover;
   width:160px;
   height: 130px;
 }
 
+#flower{
+  width: 20px;
+  height: 20px;
+}
 .headbar{
   width: 1100px;
-  height: 30%;
+  height: 100px;
   color:white;
-  padding: 50px;
   margin: auto;
-  margin-top: 15px;
   text-align: center;
+  margin-top: 65px;
 }
 .topbar{
   text-align: center;
@@ -46,7 +57,7 @@ body{
   background-color: #fef4dd;
 }
 .sidenav {
-    margin-top: 4%;
+    margin-top: 80px;
     width: 210px;
     position: fixed; 
     padding: 8px;
