@@ -43,7 +43,7 @@ img:hover{
   margin-top: 5px;
   padding:10px;
   width:1186px;
-  height:10px;
+  height:10%;
   background-color: #ffe08d;
 }
 .topbar a{
@@ -85,3 +85,4 @@ body{
 .post p{
   font-size: 20px;
 }
+
