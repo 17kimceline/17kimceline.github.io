@@ -43,7 +43,7 @@ img:hover{
   margin-top: 5px;
   padding:10px;
   width:1186px;
-  height:10%;
+  height:10px;
   background-color: #ffe08d;
 }
 .topbar a{
@@ -54,7 +54,7 @@ img:hover{
   font-size: 25px;
 }
 .topbar a:hover{
-  color: 	#facc64;
+  color:#facc64;
 }
 body{
   margin:auto;
