@@ -24,7 +24,7 @@ function nextRightModal(){
   }
   modalImg.src = nextImg.src;
   modal.style.display = "block";
-  document.getElementById('caption').innerHTML =     document.getElementById("caption" + imageNum).textContent; 
+  document.getElementById('caption').innerHTML = document.getElementById("caption" + imageNum).textContent; 
 }
 
 // function that displays left image in gallery
@@ -38,7 +38,7 @@ function nextLeftModal(){
   var nextImg = document.getElementById(imageNum);
   modalImg.src = nextImg.src;
   modal.style.display = "block";
-  document.getElementById('caption').innerHTML =     document.getElementById(caption+ imageNum+"").textContent;
+  document.getElementById('caption').innerHTML =  document.getElementById("caption"+ imageNum).textContent;
 }
 
 
