@@ -1,9 +1,17 @@
 a, p, h2{
     color: #997379;
     text-decoration: none;
+    font-family:calibri;
 }
 a:hover{
   color: #664c51;
+}
+p{
+  width: 800px;
+  margin:auto;
+  margin-top: 40px;
+  margin-left: 280px;
+  font-size: 25px;
 }
 h1{
   font-size: 50px;
