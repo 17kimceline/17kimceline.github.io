@@ -141,7 +141,9 @@ body{
     padding: 10px 0;
     height: 150px;
 }
-
+#imageCaptions{
+  display:none;
+}
 /* Add Animation */
 .modal-content, #caption {    
     -webkit-animation-name: zoom;
