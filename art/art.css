@@ -1,7 +1,7 @@
 a, p, h2{
+    font-family:calibri;
     color: #997379;
     text-decoration: none;
-    font-family:calibri;
 }
 a:hover{
   color: #664c51;
@@ -62,10 +62,10 @@ body{
 .topbar{
   text-align: center;
   margin:auto;
-  /*margin-top: 5px;*/
+  margin-top: 5px;
   padding:10px;
   width:1186px;
-  height:10px%;
+  height:10%;
   background-color: #ffd9df;
 }
 
@@ -108,8 +108,7 @@ body{
     left: 0;
     top: 0;
     width: 100%; 
-    height: 100%; 
-    overflow: auto; /* Enable scroll if needed */
+  height: 100vh;
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); 
 }
@@ -139,7 +138,7 @@ body{
     text-align: center;
     color: #ccc;
     padding: 10px 0;
-    height: 150px;
+    height: 500px;
 }
 #imageCaptions{
   display:none;
