@@ -8,8 +8,10 @@ var maxImage = 5;
 function putModal(number, imgSrc, caption){
     modal.style.display = "block";
     modalImg.src = imgSrc;
-    document.getElementById('caption').innerHTML =     document.getElementById(caption).textContent;  
+    document.getElementById('caption').innerHTML =  document.getElementById(caption).innerHTML;  
   imageNum = number;
+  // set scroll
+  modal.style.overflow = "scroll";
 }
 
 // function that displays right image in gallery
@@ -24,7 +26,7 @@ function nextRightModal(){
   }
   modalImg.src = nextImg.src;
   modal.style.display = "block";
-  document.getElementById('caption').innerHTML = document.getElementById("caption" + imageNum).textContent; 
+  document.getElementById('caption').innerHTML = document.getElementById("caption" + imageNum).innerHTML; 
 }
 
 // function that displays left image in gallery
@@ -38,7 +40,7 @@ function nextLeftModal(){
   var nextImg = document.getElementById(imageNum);
   modalImg.src = nextImg.src;
   modal.style.display = "block";
-  document.getElementById('caption').innerHTML =  document.getElementById("caption"+ imageNum).textContent;
+  document.getElementById('caption').innerHTML =  document.getElementById("caption"+ imageNum).innerHTML;
 }
 
 
