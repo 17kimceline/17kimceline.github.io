@@ -1,4 +1,4 @@
-p,a,h2, h1{
+p,a,h2{
     font-family:calibri;
     color: #967a3c;
     text-decoration: none;
@@ -14,11 +14,11 @@ h1{
   text-align: center;
   margin-left: 40%;
 }
-h1:hover{
+/*h1:hover{
   color: #facc64;
 }
 #link:hover{
-  color: #facc64;
+  color: #facc64;*/
 }
 .post img{
   object-fit: cover;
