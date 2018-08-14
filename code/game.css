@@ -3,7 +3,7 @@ p,a,h2, h1{
     color: #967a3c;
     text-decoration: none;
 }
-a:hover{
+.headbar a:hover{
   color: #facc64;
 }
 h1{
