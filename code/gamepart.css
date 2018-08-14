@@ -14,12 +14,12 @@ h1{
   text-align: center;
   margin-left: 40%;
 }
-/*img{
+.post img{
   object-fit: cover;
   width:700px;
   margin-top: 10px;
   margin-bottom: 10px;
-}*/
+}
 
 #flower{
   margin-top: 0;
