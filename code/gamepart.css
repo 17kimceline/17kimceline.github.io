@@ -17,6 +17,8 @@ h1{
 img{
   object-fit: cover;
   width:700px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #flower{
