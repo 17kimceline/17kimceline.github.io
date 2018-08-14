@@ -14,6 +14,12 @@ h1{
   text-align: center;
   margin-left: 40%;
 }
+h1:hover{
+  color: #facc64;
+}
+#link:hover{
+  color: #facc64;
+}
 .post img{
   object-fit: cover;
   width:700px;
