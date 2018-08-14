@@ -25,7 +25,7 @@ img{
   margin-top: 30px;
   margin-left: 3%;
   object-fit: cover;
-  border: 7px solid #997379;
+  /*border: 7px solid #997379;*/
   width:250px;
   height:250px;
 }
@@ -65,7 +65,7 @@ body{
   margin-top: 5px;
   padding:10px;
   width:1186px;
-  height:10%;
+  height:32px;
   background-color: #f0ae82;
 }
 
