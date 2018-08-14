@@ -1,9 +1,9 @@
-p,a,h2, h1{
+p,a,h2{
     font-family:calibri;
     color: #967a3c;
     text-decoration: none;
 }
-.headbar a:hover{
+a:hover{
   color: #facc64;
 }
 h1{
