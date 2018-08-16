@@ -61,7 +61,7 @@ span.onclick = function() {
 document.addEventListener('keydown', function(event) {
   if(display)
   {
-    if(event.keyCode == 37)||{
+    if(event.keyCode == 37){
         nextLeftModal();
     }
     else if(event.keyCode == 39) {
