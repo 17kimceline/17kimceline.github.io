@@ -57,7 +57,7 @@ span.onclick = function() {
   display = false;
 }
 
-/*// moves modals left or right depending on the key
+// moves modals left or right depending on the key
 document.addEventListener('keydown', function(event) {
   if(display)
   {
@@ -68,4 +68,4 @@ document.addEventListener('keydown', function(event) {
         nextRightModal();
     }
   }
-});*/
+});
