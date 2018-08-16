@@ -46,17 +46,17 @@ img:hover {
 
 body{
   margin:auto;
-  width: 60%;
+  width: 1200px;
   background-color: #ffebe1;
 }
 
 .headbar{
+  width: 1100px;
   height: 100px;
   color:white;
   margin: auto;
   text-align: center;
   margin-top: 65px;
-  width:100%;
 }
 
 /* Top bar*/
@@ -65,7 +65,7 @@ body{
   margin:auto;
   margin-top: 5px;
   padding:10px;
-  width:100%;
+  width:1186px;
   height:32px;
   background-color: #f0ae82;
 }
