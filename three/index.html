@@ -37,6 +37,9 @@
 
 			controls = new THREE.OrbitControls(camera, renderer.domElement);
 			
+			var light = new THREE.AmbientLight( 0x404040 ); // soft white light
+			scene.add( light );
+			
 			var loader = new THREE.OBJLoader();
 			loader.load(
 				'chicken.obj',
@@ -74,17 +77,17 @@
 			// create a material, color, or image texture
 			//var material = new THREE.MeshBasicMaterial({color: 0xFFFFFa, wireframe: false});
 			var material = new THREE.MeshFaceMaterial( cubeMaterials);
-			var cube = new THREE.Mesh(geometry, material);
+			//var cube = new THREE.Mesh(geometry, material);
 
 			// adding scene to the cube
-			scene.add(cube);
+			// scene.add(cube);
 
 			camera.position.z = 3;
 			// game logic
 			var update = function()
 			{
-				cube.rotation.x += 0.01;
-				cube.rotation.y += 0.005;
+				//cube.rotation.x += 0.01;
+				//cube.rotation.y += 0.005;
 			};
 
 			// draw scene
