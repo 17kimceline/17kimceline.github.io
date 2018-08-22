@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<title>Three.js Crash Course</title>
+
+		<style>
+			body{ margin: 0;}
+			canvas{width: 100%; height: 100%;};
+		</style>
+	</head>
+
+	<body>
+		<script src ="cc.js/three.js"></script>
+		<script src = "cc.js/OrbitControls.js"></script>
+
+		<script>
+			// what you will be viewing, what we will have objects in
+			var scene = new THREE.Scene( );
+			// what user will see the world through   Persepective vs orthographic
+			var camera = new THREE.PerspectiveCamera(75, window.innerWidth / 
+				window.innerHeight, 0.1, 1000);
+				// 0.1 and 1000 is the near and far clipping plane. Beyond 1000, users will no longer be able to see it
+
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			document.body.appendChild(renderer.domElement);
+
+			window.addEventListener('resize', function()
+			{
+				var width = window.innerWidth;
+				var height = window.innerHeight;
+				renderer.setSize(width, height);
+
+				camera.aspect = width/height; 
+				camera.updateProjectionMatrix();
+			});
+
+			controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+			
+			// create the shape
+			var geometry = new THREE.BoxGeometry( 1, 1, 1);
+
+			// create a material, color, or image texture
+			var material = new THREE.MeshBasicMaterial({color: 0xFFFFFa, wireframe: false});
+			var cube = new THREE.Mesh(geometry, material);
+
+			// adding scene to the cube
+			scene.add(cube);
+
+			camera.position.z = 3;
+			// game logic
+			var update = function()
+			{
+				cube.rotation.x += 0.01;
+				cube.rotation.y += 0.005;
+			};
+
+			// draw scene
+			var render = function()
+			{
+				renderer.render(scene, camera);
+			};
+
+			// how the game will be flowing, run game loop (update, render, repeat)
+			var GameLoop = function()
+			{
+				requestAnimationFrame(GameLoop);
+
+				update();
+				render();
+			};
+
+			GameLoop();
+		</script>
+	</body>
+
+</html>
