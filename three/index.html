@@ -39,9 +39,13 @@
 			
 			// create the shape
 			var geometry = new THREE.BoxGeometry( 1, 1, 1);
+			var cubeMaterials = 
+			[
+				new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/1.png'), side: THREE.DoubleSide})];
 
 			// create a material, color, or image texture
-			var material = new THREE.MeshBasicMaterial({color: 0xFFFFFa, wireframe: false});
+			//var material = new THREE.MeshBasicMaterial({color: 0xFFFFFa, wireframe: false});
+			var material = new THREE.MeshFaceMaterial( cubeMaterials);
 			var cube = new THREE.Mesh(geometry, material);
 
 			// adding scene to the cube
