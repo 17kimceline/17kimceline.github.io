@@ -35,7 +35,28 @@
 			});
 
 			controls = new THREE.OrbitControls(camera, renderer.domElement);
+			
+			var loader = new THREE.OBJLoader();
+			loader.load(
+				'chicken.obj',
 
+				function(object)
+				{
+					scene.add(object);
+				},
+				// called when loading is in progresses
+				function ( xhr ) {
+
+					console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
+				},
+				// called when loading has errors
+				function ( error ) {
+
+					console.log( 'An error happened' );
+
+				}
+			);
 			
 			// create the shape
 			var geometry = new THREE.BoxGeometry( 1, 1, 1);
