@@ -20,6 +20,13 @@ h1{
 #link:hover{
   color: #facc64;
 }
+video{
+  object-fit: cover;
+  width:700px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+    
 .post img{
   object-fit: cover;
   width:700px;
