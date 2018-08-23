@@ -20,7 +20,7 @@ h1{
 #link:hover{
   color: #facc64;
 }
-video{
+iframe{
   object-fit: cover;
   width:700px;
   margin-top: 10px;
