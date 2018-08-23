@@ -21,8 +21,10 @@ h1{
   color: #facc64;
 }
 iframe{
+    margin-left: 100px;
   object-fit: cover;
   width:700px;
+  height: 600px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
