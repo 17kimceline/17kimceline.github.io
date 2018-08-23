@@ -46,8 +46,7 @@
 				};
 				var onError = function ( xhr ) { };
 			
-			var light = new THREE.AmbientLight( 0x404040 ); // soft white light
-			scene.add( light );
+			var light = new THREE.AmbientLight( 0xffffff, 0.8 ); 
 			var mtlLoader = new THREE.MTLLoader();
 			//mtlLoader.setPath('/models/');
 			mtlLoader.load('chicken.mtl', 
