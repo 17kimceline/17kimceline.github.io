@@ -20,14 +20,14 @@ h1{
 #link:hover{
   color: #facc64;
 }
-iframe{
+/*iframe{
     margin-left: 100px;
   object-fit: cover;
   width:700px;
   height: 600px;
   margin-top: 10px;
   margin-bottom: 10px;
-}
+}*/
     
 .post img{
   object-fit: cover;
