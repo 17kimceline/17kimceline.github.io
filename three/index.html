@@ -66,8 +66,10 @@
 				objLoader.load('low-poly-tree.obj', function(object) 
 				{
 					scene.add(object);
+					object.children[0].material.wireframe = false;
 				}, onProgress, onError);
 			});
+			
 			/*var loader = new THREE.OBJLoader();
 			loader.load(
 				'chicken.obj',
