@@ -55,7 +55,7 @@
 			var pointLight = new THREE.PointLight( 0xffffff, 0.8 );
 			camera.add( pointLight );
 			
-			var mtlLoader = new THREE.MTLLoader();
+			/*var mtlLoader = new THREE.MTLLoader();
 			//mtlLoader.setPath('/models/');
 			mtlLoader.load('low-poly-tree.mtl', function(materials) 
 			{
@@ -68,11 +68,11 @@
 					scene.add(object);
 					object.children[0].material.wireframe = false;
 				}, onProgress, onError);
-			});
+			});*/
 			
-			/*var loader = new THREE.OBJLoader();
+			var loader = new THREE.OBJLoader();
 			loader.load(
-				'chicken.obj',
+				'low-poly-tree.obj',
 
 				function(object)
 				{
@@ -90,7 +90,7 @@
 					console.log( 'An error happened' );
 
 				}
-			);*/
+			);
 			
 			// create the shape
 			var geometry = new THREE.BoxGeometry( 1, 1, 1);
