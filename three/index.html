@@ -76,6 +76,8 @@
 
 				function(object)
 				{
+					var material = new THREE.MeshBasicMaterial({color: 0xF66aaa, wireframe: false})
+					objLoader.setMaterials(material);
 					scene.add(object);
 				},
 				// called when loading is in progresses
