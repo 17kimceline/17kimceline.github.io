@@ -49,16 +49,15 @@
 			var light = new THREE.AmbientLight( 0xffffff, 0.8 ); 
 			var mtlLoader = new THREE.MTLLoader();
 			//mtlLoader.setPath('/models/');
-			mtlLoader.load('chicken.mtl', 
-				function(materials) 
+			mtlLoader.load('chicken.mtl', function(materials) 
+			{
+				materials.preload();
+				var objLoader = new THREE.OBJLoader();
+				objLoader.setMaterials(materials);
+				//objLoader.setPath('/models/');
+				objLoader.load('chicken.obj', function(object) 
 				{
-					materials.preload();
-					var objLoader = new THREE.OBJLoader();
-					objLoader.setMaterials(materials);
-					//objLoader.setPath('/models/');
-					objLoader.load('chicken.obj', function(object) 
-					{
-						scene.add(object);
+					scene.add(object);
 					}, onProgress, onError);
 				}
 			);
