@@ -49,14 +49,14 @@
 			var light = new THREE.AmbientLight( 0x404040 ); // soft white light
 			scene.add( light );
 			var mtlLoader = new THREE.MTLLoader();
-			mtlLoader.setPath('/models/');
+			//mtlLoader.setPath('/models/');
 			mtlLoader.load('chicken.mtl', 
 				function(materials) 
 				{
 					materials.preload();
 					var objLoader = new THREE.OBJLoader();
 					objLoader.setMaterials(materials);
-					objLoader.setPath('/models/');
+					//objLoader.setPath('/models/');
 					objLoader.load('chicken.obj', function(object) 
 					{
 						scene.add(object);
