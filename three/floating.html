@@ -1,0 +1,160 @@
+<html>
+  <head>
+      <title>Floating Candy</title>
+      
+      <style>
+        body {
+          margin: 0px;
+          overflow: hidden;
+        }
+        h1{
+          font-family: calibri;
+          color: #e79191;
+          font-size:1.5vw;
+          font-weight: bold;
+          position:absolute;
+          bottom:10%;
+          right:3%;
+          text-decoration: underline;
+        }
+
+        p{
+          position:absolute; 
+          font-family: calibri;
+          color: #46617a;
+          left: 40%;
+          font-size: 1.5vw;
+          font-weight: bold;
+        }
+       </style>
+
+  <body>
+      <a href = "https://codepen.io/ckim14/pen/ZMGBoK?editors=1111">            
+        <h1>Source Code</h1>
+      </a>
+    <p>Three.js is killing me.</p>
+  
+  <!-- Required Scripts -->
+    <script src = "cc.js/OrbitControls.js"></script>
+    <script src = "cc.js/three.js></script>
+    <script src = "cc.js/three.min.js></script>
+  
+   <script>
+    //variables
+    const colors = [0xc1d4ee, 0xf0d89e, 0xe79191];
+    var flat = {flatShading: true};
+    var particles, cube;
+
+    let scene,
+        camera, 
+        renderer, 
+        controls;
+
+    // scene and camera
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+    camera.position.z = 350;
+
+
+    // renderer with orbit controls
+    renderer = new THREE.WebGLRenderer({ alpha: true } );
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0xf8f6eb, 1);
+    renderer.shadowMap.enabled = true;
+
+    document.body.appendChild(renderer.domElement);
+    controls = new THREE.OrbitControls(camera);
+
+    // adding in lights
+    const light = new THREE.DirectionalLight();
+    light.position.set(200, 100, 200);
+    light.castShadow = true;
+    light.shadow.camera.left = -100;
+    light.shadow.camera.right = 100;
+    light.shadow.camera.top = 100;
+    light.shadow.camera.bottom = -100;
+    scene.add(light);
+
+    // bright ambeint light
+    const ambientLight = new THREE.AmbientLight(0xf0d89e, 0.8);
+    scene.add(ambientLight);
+
+    function drawCube()
+    {
+        // create the shape
+        var geometry = new THREE.IcosahedronGeometry(50,1);
+        // create a material, color, or image texture
+        var material = new THREE.MeshPhongMaterial({color:0x6588a7, shading: THREE.FlatShading});
+        cube = new THREE.Mesh(geometry, material);
+        // adding scene to the cube
+        scene.add(cube);
+    }
+
+    // function that is responsive to changes in window size
+    window.addEventListener('resize', function()
+    {
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+        renderer.setSize(width, height);
+
+        camera.aspect = width/height; 
+        camera.updateProjectionMatrix();
+    });
+
+    function drawParticles() 
+    {
+      particles = new THREE.Group();
+      const geometry = new THREE.OctahedronBufferGeometry(10, 1);
+
+      for (let i = 0; i < 200; i ++) {
+        const material = new THREE.MeshPhongMaterial({
+          color: colors[Math.floor(Math.random() * colors.length)],
+          shading: 1
+        });
+        const mesh = new THREE.Mesh(geometry, material);
+        mesh.position.set((Math.random() - 0.5) * 1000,
+                          (Math.random() - 0.5) * 1000,
+                          (Math.random() - 0.5) * 1000);
+        mesh.updateMatrix();
+        mesh.matrixAutoUpdate = false;
+        scene.add(particles);
+        particles.add(mesh);
+      }
+    }
+
+    // game logic
+    var update = function()
+    {
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.005;
+
+        //rotate the particles 
+        particles.rotation.x += 0.001;
+        particles.rotation.y -= 0.004;
+    };
+
+    // draw scene
+    var render = function()
+    {
+        renderer.render(scene, camera);
+    };
+
+    // how the game will be flowing, run game loop (update, render, repeat)
+    var GameLoop = function()
+    {
+        requestAnimationFrame(GameLoop);
+
+        update();
+        render();
+    };
+
+    drawCube();
+    drawParticles();
+
+    GameLoop();
+  </script>
+</body>
+
+
+
+</html>
