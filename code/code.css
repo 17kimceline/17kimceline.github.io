@@ -82,7 +82,7 @@ body{
   color: "#000000";
 }
 .intro p{
-  font-size: 4vh;
+  font-size: 25px;
 }
 
 .post{
@@ -101,7 +101,7 @@ body{
   opactiy: 20%;
 }
 .post p{
-  font-size: 20px;
+  font-size: 4vh;
 }
 
 #left{
