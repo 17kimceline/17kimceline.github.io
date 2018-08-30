@@ -1,0 +1,402 @@
+<html>
+  <head>
+      <title>Floating Candy</title>
+      
+      <style>
+        body {
+          margin: 0px;
+          overflow: hidden;
+        }
+        #world {
+          position:absolute;
+          width:100%;
+          height:100%;
+          overflow:hidden;
+        }
+        p{
+          font-family: calibri;
+          color: #e58156;
+          font-size:25px;
+          font-weight: bold;
+          position:absolute;
+          left: 45%;
+        }
+
+        .refresh p{
+          font-size: 20px;
+          left: 50%;
+          top:80%;
+        }
+        .refresh p:hover{
+          cursor: pointer;
+        }
+        a{
+          font-family: calibri;
+          color: #e79191;
+          font-size:2.5vw;
+          font-weight: bold;
+          position:absolute;
+          bottom:10%;
+          right:3%;
+          text-decoration: underline;
+        }
+       </style>
+
+  <body>
+    <div class = "world"></div>
+       <div class = "instructions"><p>PRESS DOWN ON THE MOUSE</div>
+    <div class = "refresh"><p onclick = 'refresh()'>RELOAD</p></div>
+   
+    <a href = "https://codepen.io/ckim14/pen/JaXqQW?editors=1111" target = "_blank">Source Code</a>
+  
+  <!-- Required Scripts -->
+		<script src ="cc.js/three.js"></script>
+		<script src = "cc.js/OrbitControls.js"></script>
+  
+   <script>
+      var scene,
+      camera,
+      renderer,
+      controls;
+
+      var mouseDown = false;
+
+      var bear,
+          gimbap1,
+          gimbap2,
+          gimbap3;
+
+      var width =  window.innerWidth;
+      var height = window.innerHeight;
+
+      function refresh(){
+        window.location.reload(true);
+      }
+      // initialize the scene
+      function init(){
+
+        scene = new THREE.Scene();
+        //camera = new THREE.OrthographicCamera(-500, 500, 500, -500, 1, 1000 );
+        camera = new THREE.PerspectiveCamera(50, width / height, 1, 2000 );
+        camera.position.z = 400;
+        camera.position.y = 70;
+        camera.position.x = 10;
+
+        renderer = new THREE.WebGLRenderer({alpha: true});
+        renderer.setSize(width, height);
+        renderer.setPixelRatio(window.devicePixelRatio*2);
+        renderer.setClearColor(0xc1d4ee, 1);
+        renderer.shadowMap.enabled = true;
+
+        document.body.appendChild(renderer.domElement);
+
+        //controls = new THREE.OrbitControls(camera);
+
+        window.addEventListener('resize', onWindowResize, false);
+        document.addEventListener('mousedown', onMouseDown);
+        document.addEventListener('mouseup', onMouseUp);
+
+      }
+
+      // resizes the rendered screen when user changes window size
+      function onWindowResize(){
+
+        width = window.innerWidth;
+        height = window.innerHeight;
+        renderer.setSize(width, height);
+
+        camera.aspect = width/height;
+        camera.updateProjectionMatrix();
+
+      }
+
+      // detects if mouse down or up
+      function onMouseDown(){
+        mouseDown = true;
+      }
+
+      function onMouseUp(){
+        mouseDown = false;
+      }
+
+
+      // adds light to the scene
+      function addLight(){
+      // adding in lights
+      const light = new THREE.DirectionalLight();
+      light.position.set(350, 400, 200);
+      light.castShadow = true;
+      light.shadow.camera.left = -100;
+      light.shadow.camera.right = 100;
+      light.shadow.camera.top = 100;
+      light.shadow.camera.bottom = -100;
+      scene.add(light);
+
+        // bright ambeint light
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+        scene.add(ambientLight);
+
+      }
+
+      // draws a gimbap
+      function drawGimbap(){
+
+        // gimbap group
+        let gimbap = new THREE.Group();
+        //scene.add(gimbap);
+
+        // materials
+        let seaweedMaterial = new THREE.MeshPhongMaterial({color: 0x0b1e21, shading: THREE.FlatShading});
+        let riceMaterial = new THREE.MeshPhongMaterial({color: 0xf5e8e0, shading: THREE.FlatShading});
+        let radishMaterial = new THREE.MeshPhongMaterial({color: 0xeec031, shading: THREE.FlatShading});
+        let meatMaterial = new THREE.MeshPhongMaterial({color: 0xb44e4e, shading: THREE.FlatShading});
+        let spinichMaterial = new THREE.MeshPhongMaterial({color: 0x305130, shading: THREE.FlatShading});
+        let carrotMaterial = new THREE.MeshPhongMaterial({color: 0xd05e00, shading: THREE.FlatShading});
+
+        // geometries
+        let seaweedGeometry = new THREE.CylinderGeometry(10, 10, 10, 10);
+        let riceGeometry = new THREE.CylinderGeometry(9, 9, 11, 10);
+        let radishGeometry = new THREE.BoxGeometry(5,4,12);
+        let meatGeometry = new THREE.BoxGeometry(5,5,12);
+        let spinichGeometry = new THREE.BoxGeometry(1,4.5,12);
+        let spinichGeometry2 = new THREE.BoxGeometry(2,4.5,12);
+        let carrotGeometry = new THREE.BoxGeometry(1.5,1.5, 12);
+
+        // creation of each shape
+        let seaweed = new THREE.Mesh(seaweedGeometry, seaweedMaterial );
+        seaweed.rotation.x = Math.PI / 2;
+
+        let rice = new THREE.Mesh(riceGeometry, riceMaterial );
+        rice.rotation.x = Math.PI / 2;
+
+        // radish
+        let radish = new THREE.Mesh(radishGeometry, radishMaterial);
+        radish.position.x -= 2;
+        radish.position.y -= 2;
+
+        //meat
+        let meat = new THREE.Mesh(meatGeometry, meatMaterial);
+        meat.position.x += 3;
+        meat.position.y += .5;
+
+        // spinich
+        let spinich = new THREE.Group();
+        let sp1 = new THREE.Mesh(spinichGeometry, spinichMaterial);
+        sp1.position.y += 2.5;
+        let sp2 = new THREE.Mesh(spinichGeometry2, spinichMaterial);
+        sp2.position.y += 2.5;
+        sp2.position.x -= 2;
+        let sp3 = new THREE.Mesh(spinichGeometry, spinichMaterial);
+        sp3.position.y += 2.5;
+        sp3.position.x -=4;
+
+        spinich.add(sp1);
+        spinich.add(sp2);
+        spinich.add(sp3);
+
+        //carrots
+        let carrot = new THREE.Group();
+        let crt1 = new THREE.Mesh(carrotGeometry, carrotMaterial);
+        crt1.position.x += 1.5;
+        crt1.position.y -= 3.5;
+        let crt2 = new THREE.Mesh(carrotGeometry, carrotMaterial);
+        crt2.position.x += 3.75;
+        crt2.position.y -= 3.5;
+        let crt3 = new THREE.Mesh(carrotGeometry, carrotMaterial);
+        crt3.position.y -= 5.5;
+        let crt4 = new THREE.Mesh(carrotGeometry, carrotMaterial);
+        crt4.position.x += 2.5;
+        crt4.position.y -= 5.5;
+
+        carrot.add(crt1);
+        carrot.add(crt2);
+        carrot.add(crt3);
+        carrot.add(crt4);
+
+        gimbap.add(seaweed);
+        gimbap.add(rice);
+        gimbap.add(radish);
+        gimbap.add(meat);
+        gimbap.add(spinich);
+        gimbap.add(carrot);
+
+        gimbap.rotation.z = Math.PI /2.5;
+        return gimbap;
+      }
+
+      // function creates the bear
+      function createBear(){
+
+        bear = new Bear();
+        bear.bear.position.x -=100;
+        bear.bear.position.y+=8;
+        //bear.position.y=0;
+        scene.add(bear.bear);
+      }
+
+      // the componenets of the bear object
+      class Bear{
+          constructor(){
+          // base material
+          this.baseMaterial = new THREE.MeshPhongMaterial({color: 0xdbd3c5, shading: THREE.FlatShading});
+
+          // head
+          this.head = new THREE.Group();
+
+          this.noseMaterial = new THREE.MeshPhongMaterial({color: 0x725027, shading: THREE.FlatShading});
+          this.cheekMaterial = new THREE.MeshPhongMaterial({color: 0xf28932, shading: THREE.FlatShading});
+          this.eyeMaterial = new THREE.MeshPhongMaterial({color: 0x493524, shading: THREE.FlatShading});
+          this.insideMaterial = new THREE.MeshPhongMaterial({color: 0xffb6a4, shading: THREE.FlatShading});
+
+          var headGeometry = new THREE.BoxGeometry(60,35,30);
+          //var mouthGeometry = new THREE.BoxGeometry(55,7,25);
+          var mouthLipGeometry = new THREE.TorusGeometry(6, 1, 2, 10);
+          var noseGeometry = new THREE.BoxGeometry(10,10,15);
+          var cheekGeometry = new THREE.BoxGeometry(12,12,2);
+          var eyeGeometry = new THREE.TorusGeometry(6, 1.5, 2, 10, Math.PI);
+          var earGeometry = new THREE.BoxGeometry(10,10,10);
+          var earInsideGeometry = new THREE.BoxGeometry(8,8,3);
+
+          var headBase = new THREE.Mesh(headGeometry, this.baseMaterial);
+
+          //mouth
+         // var mouth = new THREE.Mesh(mouthGeometry, this.baseMaterial);
+         // mouth.position.y-=17;
+         // mouth.position.x-= 2.5;
+          var mouthLip = new THREE.Mesh(mouthLipGeometry, this.eyeMaterial);
+          mouthLip.position.y-=7;
+          mouthLip.position.x+= 31;
+          mouthLip.rotation.y = Math.PI/2;
+          //nose
+          var nose = new THREE.Mesh(noseGeometry, this.noseMaterial);
+          nose.position.y+=14;
+          nose.position.x+=27;
+          //cheek
+          var cheek = new THREE.Mesh(cheekGeometry, this.cheekMaterial);
+          cheek.position.x-= 15;
+          cheek.position.y-=5;
+          cheek.position.z+=16;
+          //eye
+          var eye = new THREE.Mesh(eyeGeometry, this.eyeMaterial);
+          eye.position.x -=10;
+          eye.position.z+=15.3;
+          eye.position.y+=8;
+          eye.rotation.z =Math.PI;
+          //ear
+          var ear1 = new THREE.Mesh(earGeometry, this.baseMaterial);
+          ear1.position.x-=23;
+          ear1.position.z+=18;
+          ear1.position.y+=20;
+          var ear2 = new THREE.Mesh(earGeometry, this.baseMaterial);
+          ear2.position.x-=23;
+          ear2.position.z-=15;
+          ear2.position.y+=17;
+          var earInside = new THREE.Mesh(earInsideGeometry, this.insideMaterial);
+          earInside.position.x-=23;
+          earInside.position.z+=24;
+          earInside.position.y+=20;
+
+          // add the head parts into the head group
+          this.head.add(headBase);
+         // this.head.add(mouth);
+          this.head.add(mouthLip);
+          this.head.add(nose);
+          this.head.add(cheek);
+          this.head.add(eye);
+          this.head.add(ear1);
+          this.head.add(ear2);
+          this.head.add(earInside);
+          this.head.position.y-=3;
+
+          //create the body of the bear
+          this.body = new THREE.Group();
+
+          this.bodyBaseGeometry = new THREE.BoxGeometry(140,45,60);
+          this.armGeometry = new THREE.BoxGeometry(60,20,10);
+          this.legGeometry = new THREE.BoxGeometry(55,25,15);
+
+          this.bodyBase = new THREE.Mesh(this.bodyBaseGeometry, this.baseMaterial);
+          this.bodyBase.position.x-=100;
+          this.bodyBase.position.y+=2;
+          //arm
+          this.arm = new THREE.Mesh(this.armGeometry, this.baseMaterial);
+          this.arm.position.z +=35;
+          this.arm.position.x-=70;
+          this.arm.position.y-=10;
+
+          //legs
+          this.leg1 = new THREE.Mesh(this.legGeometry, this.baseMaterial);
+          this.leg1.position.z+=30;
+          this.leg1.position.x-=170;
+          this.leg1.position.y-=7;
+          this.leg2 = new THREE.Mesh(this.legGeometry, this.baseMaterial);
+          this.leg2.position.z-=30;
+          this.leg2.position.x-=170;
+          this.leg2.position.y-=7;
+
+          //tail
+          this.tail = new THREE.Mesh(noseGeometry, this.baseMaterial);
+          this.tail.position.x-=170;
+          this.tail.position.y+=27;
+
+          this.body.add(this.bodyBase);
+          this.body.add(this.arm);
+          this.body.add(this.leg1);
+          this.body.add(this.leg2);
+          this.body.add(this.tail);
+
+          this.bear = new THREE.Group();
+          this.bear.add(this.head);
+          this.bear.add(this.body);
+
+          this.angle = 0;
+          }
+
+          eatGimbap(speed){
+
+            if(mouseDown){
+              //mouseDown = false;
+              this.angle+=speed;
+              this.bear.position.x+=1;
+             
+              if(this.bear.position.x >=0 ){
+                scene.remove(gimbap1);
+                if(this.bear.position.x>230)
+                  scene.remove(gimbap2);
+              }
+          }
+        }
+      }
+
+      // call all the looping functions and renders the scene
+      function gameLoop(){
+        bear.eatGimbap(0.05);
+        // animation request for orbit, rotations, and any change
+        requestAnimationFrame(gameLoop);
+        // last step
+        renderer.render(scene, camera);
+      }
+
+      // calling the required functions to finally create the scene
+      init();
+      addLight();
+
+      //create the gimbaps
+       gimbap1 = drawGimbap();
+       gimbap2 = drawGimbap();
+
+      gimbap2.position.x += 80;
+      scene.add(gimbap1);
+      scene.add(gimbap2);
+
+      //create the bear
+      createBear();
+
+      gameLoop();
+
+  </script>
+</body>
+
+
+
+</html>
