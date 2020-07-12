@@ -76,7 +76,7 @@ body{
 
 /* Sidebar */
 .sidenav {
-    margin-top: 45;
+    margin-top: 90px;
     width: 200px;
     position: fixed; 
     padding: 5px;
@@ -91,7 +91,7 @@ body{
 
 /* Projects */
 .posts{
- margin-top: 40px;
+ margin-top: 90px;
  margin-left: 250;
 }
 .post{
@@ -103,12 +103,6 @@ body{
   max-width: 40%;
   max-height: 230;
   margin-left: 20px;
-}
-.post p, .post a, .post h2, .post h4{
-  line-height: 15px;
-}
-.post h2 {
-  line-height: 5px;
 }
 .post p{
   font-size: 20px;
