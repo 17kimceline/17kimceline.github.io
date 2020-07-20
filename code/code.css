@@ -97,22 +97,34 @@ body{
 .post{
   min-height: 270;
   margin-top: 30px;
+  border-bottom: 2px solid#e9e0ca;
+  border-radius: 1px;
+  
 }
 .post img{
   float: right;
+  object-fit: cover;
   max-width: 40%;
   max-height: 230;
+  margin-top: 10px;
   margin-left: 20px;
 }
 .post p{
   font-size: 20px;
   line-height: 25px;
 }
+#lang {
+  color: #8b7c56;
+  line-height: 5px;
+  font-weight: 400;
+  font-size: 17px;
+}
 #post-sub{
   color: #a79262;
   font-style: italic;
   font-size: 18px;
   font-weight: 400;
+  line-height: 10px;
 }
 /* Buttons*/
 button {
@@ -123,9 +135,15 @@ button {
   background-color: transparent;
   border-radius: 10px;
   font-size: 13px;;
+  margin-bottom: 20px;
 }
 button:hover {
   cursor: pointer;
   color: #ffffff;
   background-color: #f0dead;
+}
+#sidenote {
+  line-height: 0;
+  text-align: left; 
+  font-size: 13px;
 }

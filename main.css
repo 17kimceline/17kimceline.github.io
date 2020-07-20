@@ -64,17 +64,30 @@ body{
 /* Intro paragraph*/
 .intro
 {
+  margin-left:40px;
+  margin-right:40px;
   margin-top: 50px;
 }
 .intro p{
   font-size: 25px;
   line-height:50px;
-  text-align: center;
+  margin-right:50px;
+  text-align: left;
 }
 #email{
   font-weight: 500;
-  font-size: 25px;
+  font-size: 23px;
 }
 #link{
   text-decoration: underline;
+}
+.intro img {
+  object-fit: cover;
+  border: 10px solid #ffffff;
+  float:right;
+  max-height:300px;
+  width:300px;
+}
+#hello {
+  font-size: 30px;
 }
