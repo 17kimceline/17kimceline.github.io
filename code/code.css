@@ -102,11 +102,12 @@ body{
   
 }
 .post img{
+  border-radius: 25px;
+  padding: 5px;
+  border: 5px solid #e9e0ca;
   float: right;
   object-fit: cover;
-  max-width: 40%;
-  max-height: 230;
-  margin-top: 10px;
+  max-height: 240;
   margin-left: 20px;
 }
 .post p{
