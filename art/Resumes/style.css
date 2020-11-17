@@ -1,0 +1,32 @@
+body{
+  background-color: #EAE2D1;
+  color:#2D475E;
+  text-align: center;
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+a {
+  color:#2D475E;
+  text-decoration: none;
+}
+a:hover{
+  color:#728ca4;
+}
+
+h1{
+  font-size: 100px;
+}
+
+.profile{
+  width: 350px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.profile:hover{
+  box-shadow: 0 0 0 10px rgb(115, 134, 155);
+  cursor: pointer; 
+ /* border: 10px solid rgb(115, 134, 155);*/
+}
