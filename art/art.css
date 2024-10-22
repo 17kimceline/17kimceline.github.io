@@ -1,239 +1,209 @@
-html{
-  font-family: 'Montserrat', sans-serif;
-  font-weight:light;
+html {
+  font-family: "Montserrat", sans-serif;
+  font-weight: light;
   font-weight: 300;
 }
-p,a,h2, h3{
-    color: #967a3c;
-    font-size: 25px;
-    text-decoration: none;
+p,
+a,
+h2 {
+  color: #444f61;
+  font-size: 20dp;
+  text-decoration: none;
 }
-h2{
-  font-size: 30px;
-  font-weight: 400;
-}
-h4{
-  font-size: 23px;
-  font-weight: 350;
-}
-a:hover{
-  color: #e4c88c;
-}
-
-#flower{
-  width: 20px;
-  height: 20px;
-}
-
-/* Header */
-.headbar{
-  color:white;
-  margin: auto;
-  text-align: center;
-  margin-top: 65px;
-}
-.headbar h1{
-  font-size: 60px;
-  font-weight: 500;
+a:hover {
+  color: #78879e;
 }
 
 /* Topbar header */
-.topbar{
-  text-align: center;
-  margin:auto;
-  margin-top: 5px;
-  padding:10px;
-  background-color: #f0dead;
+.topbar {
+  padding-top: 60px;
+  float: right;
+  width: 30%;
 }
-.topbar a{
-  text-align: center;
-  margin:auto;
+.topbar a {
   margin-left: 2%;
   margin-right: 2%;
   text-decoration: none;
 }
-body{
-  margin:auto;
-  max-width:  1200px;
-  width: 85%;
-  background-color: #f5f0e4;
+
+/* Header */
+.header {
+  padding-top: 60px;
+  color: white;
+  margin: auto;
+  text-align: left;
+  float: left;
+  font-weight: 200;
 }
-/* Intro paragraph*/
-.intro p{
-  font-size: 23px;
-  margin-left: 300px;
-  line-height:30px;
+.header a {
+  font-size: 25px;
 }
 
-/* Sidebar */
-.sidenav {
-    margin-top: 90px;
-    width: 200px;
-    position: fixed; 
-    padding: 5px;
-    border: 3px  #f0dead solid;
-}
-.sidenav a {
-    font-size: 20px;
-    line-height: 35px;
-    display: block;
-}
-#logo
-{
+body {
   margin: auto;
-  border: none;
-  width: auto;
-  height: auto;
+  max-width: 1200px;
+  width: 85%;
+  background-color: #fafcff;
 }
 
 .posts {
+  clear: both;
   margin-left: 250;
 }
-.posts img{
+.posts img {
   margin-top: 50px;
   margin-left: 50px;
   object-fit: cover;
   /*border: 7px solid #997379;*/
-  width:250px;
-  height:250px;
+  width: 250px;
+  height: 250px;
 }
 .posts img:hover {
   object-fit: cover;
-  width:250px;
-  height:250px;
+  width: 250px;
+  height: 250px;
   opacity: 0.7;
   cursor: pointer;
 }
 /* The Modal */
 .modal {
-    display: none; 
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; 
-    left: 0;
-    top: 0;
-    width: 100%; 
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
   height: 100vh;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); 
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 /* Modal Content (image) */
 .modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    border:none;
-    height: auto;
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  border: none;
+  height: auto;
 }
-.modal-content:hover{
+.modal-content:hover {
   opacity: 1;
   width: 80%;
   max-width: 700px;
-  border:none;
+  border: none;
   height: auto;
 }
 /* Caption of Modal Image */
 #caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 500px;
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 500px;
 }
-#imageCaptions{
-  display:none;
+#imageCaptions {
+  display: none;
 }
 /* Add Animation */
-.modal-content, #caption {    
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
+.modal-content,
+#caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
 }
 
 /* buttons in the model*/
-#modalButton{
-  float:right;
+#modalButton {
+  float: right;
 }
 /* Arrow*/
-button{
+button {
   background-color: gray;
-  border: none;   
-  padding: 25px 20px;
+  border: none;
+  padding: 20px 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
+  border-radius: 40%;
   cursor: pointer;
 }
-#rightButton{
+#rightButton {
   margin-top: 150px;
-  margin-right: 150px; 
+  margin-right: 150px;
 }
-#rightButton:hover{
+#rightButton:hover {
   cursor: pointer;
 }
-#leftButton{
+#leftButton {
   margin-top: 150px;
   margin-left: 150px;
-  float:left;
+  float: left;
 }
 
 /* arrow on the buttons*/
 i {
-    opacity: 1.0;
-    margin-top: 5px;
-    border: solid white;
-    border-width: 0 10px 10px 0;
-    display: inline-block;
-    padding: 10px;
+  opacity: 1;
+  margin-top: 5px;
+  border: solid white;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 10px;
 }
 .rightArrow {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
 .leftArrow {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }
 
-
 @-webkit-keyframes zoom {
-    from {-webkit-transform:scale(0)} 
-    to {-webkit-transform:scale(1)}
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
 }
 
 @keyframes zoom {
-    from {transform:scale(0)} 
-    to {transform:scale(1)}
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 /* The Close Button */
 .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .close:hover,
 .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-    .modal-content {
-        width: 100%;
-    }
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
 }
