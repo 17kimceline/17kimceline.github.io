@@ -1,67 +1,69 @@
-html{
-  font-family: 'Montserrat', sans-serif;
-  font-weight:light;
+html {
+  font-family: "Montserrat", sans-serif;
+  font-weight: light;
   font-weight: 300;
 }
-p,a,h2{
-    color: #444f61;
-    font-size: 20dp;
-    text-decoration: none;
+p,
+a,
+h2 {
+  color: #444f61;
+  font-size: 20dp;
+  text-decoration: none;
 }
-a:hover{
+a:hover {
   color: #78879e;
 }
 
 /* Topbar header */
-.topbar{
-   padding-top: 60px;
-  float:right;
+.topbar {
+  padding-top: 60px;
+  float: right;
   width: 30%;
 }
-.topbar a{
+.topbar a {
   margin-left: 2%;
   margin-right: 2%;
   text-decoration: none;
 }
 
 /* Header */
-.header{
+.header {
   padding-top: 60px;
-  color:white;
+  color: white;
   margin: auto;
   text-align: left;
-  float:left;
-  font-weight:200;
+  float: left;
+  font-weight: 200;
 }
-.header a{
-  font-size:25px;
+.header a {
+  font-size: 25px;
 }
 
-body{
-  margin:auto;
+body {
+  margin: auto;
   max-width: 1200px;
   width: 85%;
   background-color: #fafcff;
 }
 
 /* Intro paragraph*/
-.intro
-{
-   padding-top: 60px;
-  clear:both;
-  margin-left:40px;
-  margin-right:40px;
+.intro {
+  padding-top: 60px;
+  clear: both;
+  margin-left: 40px;
+  margin-right: 40px;
   margin-top: 50px;
 }
-.intro p{
+.intro p {
   font-size: 15dp;
-  margin-right:50px;
-  text-align: left;
+  margin-right: 50px;
+  text-align: center;
 }
 .intro img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   object-fit: cover;
-  border: 10px solid #ffffff;
-  float:left;
-  max-height:300px;
-  width:300px;
+  max-height: 150px;
+  width: 150px;
 }
