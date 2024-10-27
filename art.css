@@ -7,16 +7,23 @@ p,
 a,
 h2 {
   color: #3c424e;
-  font-size: 20dp;
+  font-size: 20px;
   text-decoration: none;
 }
 a:hover {
   color: #78879e;
 }
 
+.header{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin: auto;
+
+}
+
 /* Topbar header */
 .topbar {
-  padding-top: 60px;
+  padding-top: 7px;
   float: right;
 }
 .topbar a {
@@ -26,39 +33,58 @@ a:hover {
 }
 
 /* Header */
-.header {
-  padding-top: 60px;
+.title {
+  font-family: "Merriweather", sans-serif;
+  padding-left: 30px;
   color: white;
-  margin: auto;
   text-align: left;
   float: left;
   font-weight: 200;
 }
-.header a {
-  font-size: 25px;
+.title a {
+  font-size: 30px;
 }
 
 body {
-  margin: auto;
-  width: 85%;
   background-color: #ffffff;
+  margin: 10px;
 }
 
 .posts {
-  padding-top: 50px;
-  clear: both;
+  padding-top: 20px;
+  -moz-column-count: 3;
+  -webkit-column-count: 3;
+  column-count: 3;
+  -moz-column-gap: 10px;
+  -webkit-column-gap: 10px;
+  column-gap: 10px;
+
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+  
+   text-align:center;
+  clear:both;
+}
+@media (max-width:1200px){
+  .posts {
+    column-count: 2;
+  }
+}
+@media (max-width:900px){
+  .posts {
+    column-count: 1;
+  }
 }
 .posts img {
-  margin: 5px;
+  margin: 3px;
   object-fit: cover;
-  max-height: 350px;
+  width:100%;
 }
 .posts img:hover {
-  object-fit: cover;
-  max-height: 350px;
-  opacity: 0.7;
+  opacity: 0.6;
   cursor: pointer;
 }
+
 /*the insta logo*/
 .fa-lg {
   font-size: 1.33333em;
@@ -76,6 +102,7 @@ svg:not(:root) {
   overflow-clip-margin: content-box;
   overflow: hidden;
 }
+
 
 /* The Modal */
 .modal {
@@ -95,18 +122,12 @@ svg:not(:root) {
 .modal-content {
   margin: auto;
   display: block;
-  width: 80%;
+  width: 70%;
   max-width: 700px;
   border: none;
   height: auto;
 }
-.modal-content:hover {
-  opacity: 1;
-  width: 80%;
-  max-width: 700px;
-  border: none;
-  height: auto;
-}
+
 /* Caption of Modal Image */
 #caption {
   margin: auto;
@@ -130,52 +151,25 @@ svg:not(:root) {
   animation-duration: 0.6s;
 }
 
-/* buttons in the model*/
-#modalButton {
-  float: right;
+/* The left and right arrow icons in the modal view */
+span.material-symbols-outlined  {
+  padding-top: 100px;
+  margin:auto;
+  text-align:center;
+  font-size:100px;
+  color:#f1f1f1;
+}
+span.material-symbols-outlined:hover{
+  cursor: pointer;
 }
 /* Arrow*/
-button {
-  background-color: gray;
-  border: none;
-  padding: 20px 30px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  border-radius: 40%;
-  cursor: pointer;
-}
 #rightButton {
   margin-top: 150px;
-  margin-right: 150px;
-}
-#rightButton:hover {
-  cursor: pointer;
+  float: right;
 }
 #leftButton {
   margin-top: 150px;
-  margin-left: 150px;
   float: left;
-}
-
-/* arrow on the buttons*/
-i {
-  opacity: 1;
-  margin-top: 5px;
-  border: solid white;
-  border-width: 0 10px 10px 0;
-  display: inline-block;
-  padding: 10px;
-}
-.rightArrow {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
-.leftArrow {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
 }
 
 @-webkit-keyframes zoom {
@@ -218,4 +212,49 @@ i {
   .modal-content {
     width: 100%;
   }
+}
+
+.merriweather-light {
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.merriweather-light-italic {
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.merriweather-regular-italic {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.span a{
+  font-size: 500px;
+}
+
+/* Intro paragraph*/
+.intro {
+  padding-top: 60px;
+  clear: both;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 50px;
+}
+.intro p {
+  font-size: 15dp;
+  text-align: center;
+}
+.intro img {
+  display: block;
+    border: 4px solid #dbd1d1;
+  border-radius: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
 }

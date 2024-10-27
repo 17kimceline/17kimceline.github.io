@@ -11,16 +11,19 @@ var maxImage = 5;
 function putModal(number, imgSrc, caption){
     modal.style.display = "block";
     modalImg.src = imgSrc;
-    document.getElementById('caption').innerHTML = document.getElementById(caption).innerHTML;  
+    // document.getElementById('caption').innerHTML = document.getElementById(caption).innerHTML;  
   imageNum = number;
   // set scroll
   modal.style.overflow = "scroll";
   display=true;
+  // hide body scroll
+  document.body.style.overflow = 'hidden';
 }
 
 // function that displays right image in gallery
 function nextRightModal(){
   imageNum++;
+  console.log("child click" + imageNum);
   var nextImg = document.getElementById(imageNum);
   // if null, exit modal display
   if(!nextImg)
@@ -30,7 +33,7 @@ function nextRightModal(){
   }
   modalImg.src = nextImg.src;
   modal.style.display = "block";
-  document.getElementById('caption').innerHTML = document.getElementById("caption" + imageNum).innerHTML; 
+  // document.getElementById('caption').innerHTML = document.getElementById("caption" + imageNum).innerHTML; 
 }
 
 // function that displays left image in gallery
@@ -47,24 +50,48 @@ function nextLeftModal(){
   document.getElementById('caption').innerHTML = document.getElementById("caption"+ imageNum).innerHTML;
 }
 
+$('#myModal' ).click(function(e) {
+  modal.style.display = "none";
+  display = false;
+  console.log("parent click");
+  // make scrollbar visible again
+  document.body.style.overflow = 'visible'; 
+});
+
+$('#leftButton').click(function(e)
+{
+    console.log("child click");
+    nextLeftModal();
+    e.stopPropagation();
+});
+
+$('#rightButton').click(function(e)
+{
+    console.log("right child click");
+    nextRightModal();
+    e.stopPropagation();
+});
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var closeButton = document.getElementsByClassName("close")[0];
+
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-    modal.style.display = "none";
+closeButton.onclick = function() {
+  modal.style.display = "none";
   display = false;
+  // make scrollbar visible again
+  document.body.style.overflow = 'visible'; 
 }
 
 // moves modals left or right depending on the key
 document.addEventListener('keydown', function(event) {
   if(display)
   {
-    if(event.keyCode == 37){
+    if(event.key == "ArrowLeft"){
         nextLeftModal();
     }
-    else if(event.keyCode == 39) {
+    else if(event.key == "ArrowRight") {
         nextRightModal();
     }
   }
