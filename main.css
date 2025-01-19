@@ -143,6 +143,8 @@ body {
   .posts {
     margin-top: 10px;
     white-space: wrap;
+    margin-left: 0vw;
+    margin-right: 0vw;
   }
 
   .harpRow {
@@ -335,25 +337,31 @@ span.material-symbols-outlined:hover {
 
 /* Intro paragraph*/
 .intro {
-  margin-left: 10vw;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
   margin-top: 110px;
 }
 
 .intro p {
-  padding-top: 20px;
+  padding-top: 50px;
   width: 35em;
   font-size: 15dp;
   text-align: center;
   white-space: wrap;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .intro img {
-  float: left;
   border: 4px solid #dbd1d1;
   border-radius: 5%;
   object-fit: cover;
   height: 200px;
   width: 200px;
+  margin-left: 10vw;
+  margin-right: auto;
+  float: left;
 }
 
 @media only screen and (max-width: 700px) {
