@@ -27,13 +27,14 @@ a:hover {
 .topbar {
   padding-top: 7px;
   float: right;
+
+  a {
+    margin-left: 15px;
+    margin-right: 15px;
+    text-decoration: none;
+  }
 }
 
-.topbar a {
-  margin-left: 15px;
-  margin-right: 15px;
-  text-decoration: none;
-}
 
 /* Header */
 .title {
@@ -43,72 +44,134 @@ a:hover {
   text-align: left;
   float: left;
   font-weight: 200;
-}
 
-.title a {
-  font-size: 30px;
+  a {
+    font-size: 30px;
+  }
+
 }
 
 body {
   background-color: #ffffff;
   margin: 10px;
-  margin-left: 10vw;
-  margin-right: 10vw;
-  max-width: 100em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 90em;
 }
 
+
+/* Images */
 .posts {
   white-space: nowrap;
   margin-top: 3em;
-}
-
-/* Images */
-.posts img {
-  margin: 5px;
-  object-fit: contain;
-  max-height: 90vh;
   text-align: center;
-}
+  margin-left: 10vw;
+  margin-right: 10vw;
 
-.posts img:hover {
-  opacity: 0.8;
-  cursor: pointer;
-}
 
-.singleRow img {
-  width: 100%;
-}
 
-.multiRow img {
-  max-width: 50%;
-}
+  img:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
 
-/*harp row*/
-.posts .harpRow {
-  border-radius: 30px;
-  margin: 1em;
-  padding: 1em;
-  white-space: wrap;
-  text-align: center;
-  background-color: #dde4ef;
-}
 
-.harpRow img {
-  width: 48%;
-}
+  .harpRow {
+    border-radius: 15px;
+    padding: 1em;
+    white-space: wrap;
 
-.grid  {
+    text-align: center;
+    background-color: #f1f2f3;
+
+    img {
+      height: 15em;
+    }
+  }
+
+
+}
+  .singleRow img{  
+      margin: 5px;
+      object-fit: contain;
+      width: 100%;
+      min-height: 30em;
+      max-height: 50em;
+      text-align: center;
+  }
+  .multiRow img {
+    max-width: 50%;
+  }
+
+.grid {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
 
-grid-template-columns: repeat(3, 1fr);
-grid-gap: 15px;
-}
-.grid img {
-  object-fit: cover;
-  aspect-ratio: 1;
-  width: 100%;
+  img {
+    object-fit: cover;
+    aspect-ratio: 1;
+    width: 100%;
+  }
 }
 
+@media only screen and (max-width: 1100px) {
+  body {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+  .title{
+    text-align: left;
+    float: none;
+    text-align: center;
+  }
+  .topbar {
+    margin-top: 10px;
+    float: none;
+    text-align:center;
+  }
+
+  .singleRow img {
+    width: 100%;
+    min-height: 0em;
+  }
+
+  .posts {
+    margin-top: 10px;
+    white-space: wrap;
+  }
+
+  .harpRow {
+    text-align: center;
+    margin: 0em;
+    padding: 0em;
+  }
+
+  .harpRow img {
+    height: 10em;
+  }
+
+  .multiRow img {
+    max-width: 100%;
+    width: 100%;
+
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+  }
+
+}
+
+@media only screen and (min-width: 1700px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+  }
+}
 
 /*the insta logo*/
 .fa-lg {
@@ -234,6 +297,8 @@ span.material-symbols-outlined:hover {
   .modal-content {
     width: 100%;
   }
+  #rightButton {font-size: 0px;}
+  #leftButton {font-size: 0px;}
 }
 
 .merriweather-light {
@@ -260,7 +325,7 @@ span.material-symbols-outlined:hover {
 
 /* Intro paragraph*/
 .intro {
-  margin-left:10vw;
+  margin-left: 10vw;
   margin-top: 110px;
 }
 

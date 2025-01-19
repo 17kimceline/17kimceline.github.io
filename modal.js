@@ -13,7 +13,6 @@ var closeButton = document.getElementsByClassName("close")[0];
 function putModal(number, imgSrc, caption){
     modal.style.display = "block";
     modalImg.src = imgSrc;
-    // document.getElementById('caption').innerHTML = document.getElementById(caption).innerHTML;  
   imageNum = number;
   // set scroll
   modal.style.overflow = "scroll";
