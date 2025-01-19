@@ -91,17 +91,19 @@ body {
 
 
 }
-  .singleRow img{  
-      margin: 5px;
-      object-fit: contain;
-      width: 100%;
-      min-height: 30em;
-      max-height: 50em;
-      text-align: center;
-  }
-  .multiRow img {
-    max-width: 50%;
-  }
+
+.singleRow img {
+  margin: 5px;
+  object-fit: contain;
+  width: 100%;
+  min-height: 30em;
+  max-height: 50em;
+  text-align: center;
+}
+
+.multiRow img {
+  max-width: 50%;
+}
 
 .grid {
   display: grid;
@@ -120,15 +122,17 @@ body {
     margin-left: 2vw;
     margin-right: 2vw;
   }
-  .title{
+
+  .title {
     text-align: left;
     float: none;
     text-align: center;
   }
+
   .topbar {
     margin-top: 10px;
     float: none;
-    text-align:center;
+    text-align: center;
   }
 
   .singleRow img {
@@ -297,8 +301,14 @@ span.material-symbols-outlined:hover {
   .modal-content {
     width: 100%;
   }
-  #rightButton {font-size: 0px;}
-  #leftButton {font-size: 0px;}
+
+  #rightButton {
+    font-size: 0px;
+  }
+
+  #leftButton {
+    font-size: 0px;
+  }
 }
 
 .merriweather-light {
@@ -334,6 +344,7 @@ span.material-symbols-outlined:hover {
   width: 35em;
   font-size: 15dp;
   text-align: center;
+  white-space: wrap;
 }
 
 .intro img {
@@ -343,4 +354,28 @@ span.material-symbols-outlined:hover {
   object-fit: cover;
   height: 200px;
   width: 200px;
+}
+
+@media only screen and (max-width: 700px) {
+  .intro {
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .intro img {
+    float: none;
+    max-width: 30vw;
+    max-height: 30vw;
+    object-fit: cover;
+  }
+
+  .intro p {
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 80vw;
+  }
 }
