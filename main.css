@@ -124,9 +124,11 @@ body {
   }
 
   .title {
-    text-align: left;
     float: none;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
+    padding-left: 0px;
   }
 
   .topbar {
@@ -377,6 +379,9 @@ span.material-symbols-outlined:hover {
     max-width: 30vw;
     max-height: 30vw;
     object-fit: cover;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .intro p {
