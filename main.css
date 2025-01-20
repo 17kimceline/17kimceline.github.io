@@ -93,15 +93,6 @@ body {
 
 }
 
-.singleRow img {
-  margin: 5px;
-  object-fit: contain;
-  width: 100%;
-  min-height: 30em;
-  max-height: 50em;
-  text-align: center;
-}
-
 .multiRow img {
   object-fit: cover;
   max-width: 50%;
@@ -151,11 +142,6 @@ body {
     margin-top: 10px;
     float: none;
     text-align: center;
-  }
-
-  .singleRow img {
-    width: 100%;
-    min-height: 0em;
   }
 
   .posts {
