@@ -11,6 +11,7 @@ var closeButton = document.getElementsByClassName("close")[0];
 
 // function that displays the clicked image in modal
 function putModal(number, imgSrc, caption) {
+  return
   modal.style.display = "block";
   modalImg.src = imgSrc;
   imageNum = number;
